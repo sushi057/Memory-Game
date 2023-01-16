@@ -1,9 +1,9 @@
-import Overview from "./components/Overview";
+import Game from "./components/Game";
 
 function App() {
   return (
     <div className="App">
-      <Overview />
+      <Game />
     </div>
   );
 }
