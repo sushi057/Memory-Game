@@ -48,11 +48,9 @@ const albumData = [
     src: "./images/wall.jpg",
   },
   {
-    name: "Wish you were here",
+    name: "Wish You Were Here",
     src: "./images/wish.jpg",
   },
 ];
-
-
 
 export default albumData;

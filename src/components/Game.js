@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Overview from "./Overview";
+import Overview from "./Albums";
+import Header from "./Header";
 
 function Game() {
-  const [score, setScore] = useState(0);
   return (
     <div>
+      <Header />
       <Overview />
     </div>
   );
