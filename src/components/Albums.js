@@ -11,7 +11,12 @@ const Overview = () => {
     if (score > highScore) setHighScore(score);
   };
 
+  const checkScore = () => {
+    if (score === 13) console.log("YOU WIN!");
+  };
+
   const handleClick = (e) => {
+    displayAlbums(shuffle(albumsData));
     if (albums.includes(e.target.alt)) {
       console.log("something");
       setScore(0);
@@ -21,8 +26,23 @@ const Overview = () => {
       setAlbums((prev) => [...prev, e.target.alt]);
     }
   };
+
+  const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+
+  const displayAlbums = (data) => {
+    data.map((album) => {
+      return (
+        <li>
+          <img src={album.src} alt={album.name} onClick={handleClick} />
+          <p>{album.name}</p>
+        </li>
+      );
+    });
+  };
+
   useEffect(() => {
     setNewHighScore();
+    checkScore();
     console.log(albums);
   }, [score, albums]);
 
@@ -32,16 +52,14 @@ const Overview = () => {
         <p>Score: {score}</p>
         <p>High Score: {highScore}</p>
       </div>
-      <ul>
-        {albumsData.map((album) => {
-          return (
-            <li>
-              <img src={album.src} alt={album.name} onClick={handleClick} />
-              <p>{album.name}</p>
-            </li>
-          );
-        })}
-      </ul>
+      {shuffle(albumsData).map((album) => {
+        return (
+          <li>
+            <img src={album.src} alt={album.name} onClick={handleClick} />
+            <p>{album.name}</p>
+          </li>
+        );
+      })}
     </div>
   );
 };
