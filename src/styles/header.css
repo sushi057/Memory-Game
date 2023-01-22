@@ -1,3 +1,9 @@
 .header {
   text-align: center;
 }
+
+h3 {
+  padding-top: 0px;
+  margin-top: -16px;
+  color: #5b8fb9;
+}

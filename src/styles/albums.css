@@ -15,7 +15,15 @@ li {
   padding-top: 24px;
 }
 
+.cards-section p {
+  font-weight: bold;
+}
+
 .cards-section img {
   border: 3px solid black;
   border-radius: 8px;
+}
+
+.score {
+  color: white;
 }

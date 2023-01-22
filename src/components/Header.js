@@ -4,7 +4,7 @@ import "../styles/header.css";
 function Header() {
   return (
     <div className="header">
-      <h1>Memory-Game</h1>
+      <h1>Memory Game</h1>
       <h3>Pink Floyd Edition</h3>
     </div>
   );
