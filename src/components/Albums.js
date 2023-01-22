@@ -47,19 +47,22 @@ const Overview = () => {
   }, [score, albums]);
 
   return (
-    <div>
+    <div className="albums-section">
       <div className="score">
         <p>Score: {score}</p>
         <p>High Score: {highScore}</p>
       </div>
-      {shuffle(albumsData).map((album) => {
-        return (
-          <li>
-            <img src={album.src} alt={album.name} onClick={handleClick} />
-            <p>{album.name}</p>
-          </li>
-        );
-      })}
+
+      <div className="cards-section">
+        {shuffle(albumsData).map((album) => {
+          return (
+            <li>
+              <img src={album.src} alt={album.name} onClick={handleClick} />
+              <p>{album.name}</p>
+            </li>
+          );
+        })}
+      </div>
     </div>
   );
 };
